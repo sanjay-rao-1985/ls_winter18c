@@ -1,0 +1,41 @@
+view: rbt_pmt_qual_ben_map {
+  derived_table: {
+    sql: SELECT
+        RBTPMTMAP1.REBATE_PMT_WID,
+        RBTPMTMAP1.PROGRAM_QUAL_BEN_WID,
+        RBTPMTMAP1.IS_QUAL_COMPONENT,
+        CASE WHEN RBTPMTMAP2.BASKET_WID IS NOT NULL THEN RBTPMTMAP2.BASKET_WID ELSE RBTPMTMAP1.BASKET_WID END AS BASKET_WID
+      FROM (SELECT REBATE_PMT_WID,PROGRAM_QUAL_BEN_WID,B.BASKET_WID,IS_QUAL_COMPONENT FROM MN_REBATE_PMT_BEN_FACT_VW A
+      LEFT JOIN MN_RBT_QUAL_MB_PROD_MAP_ALL_VW B ON A.PROGRAM_QUAL_BEN_WID = B.PROGRAM_QUAL_WID) RBTPMTMAP1
+      LEFT JOIN (SELECT REBATE_PMT_WID,PROGRAM_QUAL_BEN_WID,B.BASKET_WID,IS_QUAL_COMPONENT FROM MN_REBATE_PMT_BEN_FACT_VW A
+      LEFT JOIN MN_RBT_QUAL_MB_PROD_MAP_ALL_VW B ON A.PROGRAM_QUAL_BEN_WID = B.PROGRAM_QUAL_WID) RBTPMTMAP2
+      ON RBTPMTMAP1.REBATE_PMT_WID=RBTPMTMAP2.REBATE_PMT_WID AND RBTPMTMAP1.IS_QUAL_COMPONENT = 'N' AND RBTPMTMAP2.IS_QUAL_COMPONENT = 'Y'
+ ;;
+  }
+
+
+  dimension: rebate_pmt_wid {
+    type: string
+    hidden: yes
+    sql: ${TABLE}.REBATE_PMT_WID ;;
+  }
+
+  dimension: program_qual_ben_wid {
+    type: string
+    hidden: yes
+    sql: ${TABLE}.PROGRAM_QUAL_BEN_WID ;;
+  }
+
+  dimension: is_qual_component {
+    type: string
+    hidden: yes
+    sql: ${TABLE}.IS_QUAL_COMPONENT ;;
+  }
+
+  dimension: basket_wid {
+    type: string
+    hidden: yes
+    sql: ${TABLE}.BASKET_WID ;;
+  }
+
+}
