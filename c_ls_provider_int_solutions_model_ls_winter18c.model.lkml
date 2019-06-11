@@ -6,9 +6,9 @@ include: "*.view.lkml"         # include all views in this project
 
 
 
-include: "c_ls_revenue_waterfall_ls_winter18c.dashboard.lookml"
-include: "SalesRevenueGrossToNet.dashboard.lookml"
-include: "SalesSummaryByCustomerView.dashboard.lookml"
+#include: "c_ls_revenue_waterfall_ls_winter18c.dashboard.lookml"
+#include: "SalesRevenueGrossToNet.dashboard.lookml"
+#include: "SalesSummaryByCustomerView.dashboard.lookml"
 
 label: "Int Solutions Provider Intelligence"
 

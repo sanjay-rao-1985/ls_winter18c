@@ -38,8 +38,8 @@ include: "base_ls_provider_int_app_cmpl_ctrt_view.dashboard.lookml"
 include: "base_ls_provider_int_app_cmpl_cust_view.dashboard.lookml"
 include: "base_ls_provider_int_app_pricing_view.dashboard.lookml"
 
-include: "SalesSummaryByProduct.dashboard.lookml"
-include: "SalesSummaryByCustomerView.dashboard.lookml"
+#include: "SalesSummaryByProduct.dashboard.lookml"
+#include: "SalesSummaryByCustomerView.dashboard.lookml"
 
 label: "Provider Intelligence"
 
