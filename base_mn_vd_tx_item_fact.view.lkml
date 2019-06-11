@@ -913,11 +913,11 @@ view: mn_vd_tx_item_fact {
   }
 
   measure: Rebate_Unit_Calc {
-    type: sum
+    type: average_distinct
     label: "Average Rebate per Unit"
     group_label: "Item Measures"
     value_format_name: decimal_2
-    sql: ${reimbursement_amount}/Count(${TABLE}.SRC_SYS_TX_ITEM_ID) ;;
+    sql: ${reimbursement_amount};;
   }
 
   measure: total_qty {
