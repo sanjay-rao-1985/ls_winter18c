@@ -1209,7 +1209,7 @@ view: mn_vd_tx_item_fact {
       rev_reimbursement_quarter,rev_reimbursement_year,rev_service_provider_id,rev_plan_id_code,rev_plan_id_qualifier,
       rev_product_id,rev_product_id_qualifier,rev_fill_number,rev_prescription_reference_number,rev_unit_of_measure,rev_patient_liability_amount,
       rev_reimbursement_amount,rev_quantity,rev_rebate_per_unit,rev_subscriber_reimbursement_amount,rev_total_no_of_prescriptions,
-      rev_record_id]
+      rev_record_id,total_count]
   }
 
   set: transactionitemsset {
@@ -1231,7 +1231,7 @@ view: mn_vd_tx_item_fact {
       total_table_disp_fee,tot_record_disp_fee,tot_inv_rate_1,tot_invo_price_1,tot_inv_per_unit_amt_1,tot_inv_amount_1,
       tot_inv_rate_2,tot_invo_price_2,tot_inv_per_unit_amt_2,tot_inv_amount_2,tot_inv_rate_3,tot_invo_price_3,tot_inv_per_unit_amt_3,
       tot_inv_amount_3,tot_inv_rate_4,tot_invo_price_4,tot_inv_per_unit_amt_4,tot_inv_amount_4,tot_inv_rate_5,tot_invo_price_5,
-      tot_inv_per_unit_amt_5,tot_inv_amount_5]
+      tot_inv_per_unit_amt_5,tot_inv_amount_5,total_count]
   }
 
   set: tx_item_hist_set {
@@ -1253,12 +1253,12 @@ view: mn_vd_tx_item_fact {
       total_table_disp_fee,tot_record_disp_fee,tot_inv_rate_1,tot_invo_price_1,tot_inv_per_unit_amt_1,tot_inv_amount_1,
       tot_inv_rate_2,tot_invo_price_2,tot_inv_per_unit_amt_2,tot_inv_amount_2,tot_inv_rate_3,tot_invo_price_3,tot_inv_per_unit_amt_3,
       tot_inv_amount_3,tot_inv_rate_4,tot_invo_price_4,tot_inv_per_unit_amt_4,tot_inv_amount_4,tot_inv_rate_5,tot_invo_price_5,
-      tot_inv_per_unit_amt_5,tot_inv_amount_5]
+      tot_inv_per_unit_amt_5,tot_inv_amount_5,total_count]
   }
 
   set: transactiondetailsset {
     fields: [dispensed_as_written,external_rx_id,subscriber_id,prescriber_id_type,prescriber_id,diagnosis_code,
-      therapeutic_code,therapeutic_description,pharmacy_name,pharmacy_address,pharmacy_city,pharmacy_state,pharmacy_zip,src_sys_tx_item_id_det]
+      therapeutic_code,therapeutic_description,pharmacy_name,pharmacy_address,pharmacy_city,pharmacy_state,pharmacy_zip,src_sys_tx_item_id_det,total_count]
   }
 
 # Transaction Duplicates Sets Begin
@@ -1280,11 +1280,11 @@ invoiced_per_unit_amnt_5,invoiced_amount_5,filler_1,filler_2,filler_3,total_qty,
 subscriber_reimburse_amt,requested_rebate_amt,no_rebate_per_unit,rebate_days_supply,tot_third_party_liability,total_table_disp_fee,tot_record_disp_fee,
 tot_inv_rate_1,tot_invo_price_1,tot_inv_per_unit_amt_1,tot_inv_amount_1,tot_inv_rate_2,tot_invo_price_2,tot_inv_per_unit_amt_2,tot_inv_amount_2,tot_inv_rate_3,
 tot_invo_price_3,tot_inv_per_unit_amt_3,tot_inv_amount_3,tot_inv_rate_4,tot_invo_price_4,tot_inv_per_unit_amt_4,tot_inv_amount_4,tot_inv_rate_5,tot_invo_price_5,
-tot_inv_per_unit_amt_5,tot_inv_amount_5]
+tot_inv_per_unit_amt_5,tot_inv_amount_5,total_count]
   }
 
  set: item_filewithduplicates {
-   fields: [itm_dup_record_id]
+   fields: [itm_dup_record_id,total_count]
  }
 # Transaction Duplicates Sets End
 
