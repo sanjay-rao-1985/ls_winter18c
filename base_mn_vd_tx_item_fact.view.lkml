@@ -913,11 +913,11 @@ view: mn_vd_tx_item_fact {
   }
 
   measure: number_of_records {
-    type: number
+    type: count
     label: "Record Count"
     group_label: "Item Measures"
     value_format_name: decimal_2
-    sql: ${TABLE}.SRC_SYS_TX_ITEM_ID ;;
+   # sql: ${TABLE}.SRC_SYS_TX_ITEM_ID ;;
   }
 
   measure: Rebate_Unit_Calc {
