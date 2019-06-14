@@ -912,8 +912,8 @@ view: mn_vd_tx_item_fact {
     sql: ${TABLE}.SRC_SYS_TX_ITEM_ID ;;
   }
 
-  measure: total_count2 {
-    type: count
+  measure: number_of_records {
+    type: number
     label: "Record Count"
     group_label: "Item Measures"
     value_format_name: decimal_2
