@@ -20,7 +20,7 @@ explore: vd_tx_details {
   join: mn_vd_tx_item_fact {
     from: mn_vd_tx_item_fact
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     view_label: "Transaction Items"
     sql_on: ${mn_vd_file_header_fact.file_wid} = ${mn_vd_tx_item_fact.file_wid} ;;
   }
@@ -29,7 +29,7 @@ explore: vd_tx_details {
   join: mn_vd_file_item_error_fact {
     from: mn_vd_file_item_error_fact
     type: left_outer
-    relationship: many_to_one
+    relationship: many_to_many
     view_label: "Transaction Items"
     sql_on: ${mn_vd_tx_item_fact.tx_item_wid} = ${mn_vd_file_item_error_fact.file_item_wid} and ${mn_vd_file_item_error_fact.file_data_type} = 'TX' ;;
   }
