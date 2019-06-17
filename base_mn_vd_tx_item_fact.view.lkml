@@ -977,7 +977,7 @@ view: mn_vd_tx_item_fact {
   }
 
   measure: no_rebate_per_unit {
-    type: number
+    type: average
     label: "Rebate Per Unit"
     group_label: "Item Measures"
     value_format_name: decimal_2
